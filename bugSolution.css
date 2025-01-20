@@ -1,0 +1,25 @@
+/* bugSolution.css */
+
+/* More specific rule to override the less specific rule in bug.css */
+#myElement.myClass {
+  color: blue;
+}
+
+/* Use !important as last resort to override other rules. */
+.myClass {
+  color: red !important; /*This will override the previous rule*/
+}
+
+/*Use child combinators instead of class selector to avoid more general class selector*/
+div > p {
+    color: green;
+}
+
+/* Use attribute selectors carefully */
+[data-test="true"] {
+  background-color: yellow;
+}
+/*If you want to modify styles for this specific element, use ID selector*/
+#myElement[data-test="true"] {
+    background-color: orange;
+}
